@@ -1,0 +1,35 @@
+#DONT FORGET!!!
+#passwords need to be the same for db & nextcloud
+services:
+  db:
+    image: mariadb
+    container_name: nextcloud_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=VerySecure        # Root password for MariaDB
+      - MYSQL_DATABASE=nextcloud              # Database name for Nextcloud
+      - MYSQL_USER=nextcloud                  # Username for Nextcloud
+      - MYSQL_PASSWORD=<Password>             # Password for Nextcloud user
+    volumes:
+      - /path/to/file/db:/var/lib/mysql       # Persist database data
+    restart: unless-stopped
+
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=1000                             # User ID
+      - PGID=1000                             # Group ID
+      - TZ=Etc/UTC                            # Timezone
+      - MYSQL_HOST=db                         # Database host
+      - MYSQL_USER=nextcloud                  # Database username
+      - MYSQL_PASSWORD=<Password>             # Database password
+      - MYSQL_DATABASE=nextcloud              # Database name
+    volumes:
+      - /path/to/file/config:/config  # Config directory
+      - /path/to/file/data:/data      # Data directory
+    ports:
+      - <port>:443                               
+    restart: unless-stopped
+
+
+

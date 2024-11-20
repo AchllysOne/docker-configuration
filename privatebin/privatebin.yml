@@ -1,0 +1,11 @@
+services:
+  privatebin:
+    container_name: pvbin
+    image: privatebin/nginx-fpm-alpine:1.2.1
+    read_only: true
+    volumes:
+      - '/path/to/data:/srv/data' 
+      - '/path/to/conf.php:/srv/cfg/conf.php:ro' 
+    ports:
+      - <port>:80 
+    restart: always
