@@ -5,7 +5,7 @@ services:
     image: mariadb
     container_name: nextcloud_db
     environment:
-      - MYSQL_ROOT_PASSWORD=VerySecure        # Root password for MariaDB
+      - MYSQL_ROOT_PASSWORD=<password>       # Root password for MariaDB
       - MYSQL_DATABASE=nextcloud              # Database name for Nextcloud
       - MYSQL_USER=nextcloud                  # Username for Nextcloud
       - MYSQL_PASSWORD=<Password>             # Password for Nextcloud user

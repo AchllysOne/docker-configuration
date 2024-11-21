@@ -6,7 +6,7 @@ services:
       - "TZ=Europe/Paris"
       - "PUID=1500"
       - "PGID=1500"
-      - "SMTP_HOST=m"
+      - "SMTP_HOST=<provider>"
       - "SMTP_PORT=587"
       - "SMTP_TLS=on"
       - "SMTP_STARTTLS=on"
