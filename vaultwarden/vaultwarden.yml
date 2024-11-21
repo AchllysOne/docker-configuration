@@ -1,0 +1,22 @@
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    image: vaultwarden/server:latest
+    restart: unless-stopped
+    ports:
+      - "<port>:80"  
+    volumes:
+      - /path/to/file/vaultwarden/bitwarden:/data:rw
+    environment:
+      # Uncomment and configure the following line if using TLS
+      # - ROCKET_TLS={certs="/ssl/certs/certs.pem",key="/ssl/private/key.pem"}
+      - ADMIN_TOKEN=<password>
+      - WEBSOCKET_ENABLED=true
+      - SIGNUPS_ALLOWED=false
+      - SMTP_HOST=<provider>
+      - SMTP_FROM=email@domain.tld
+      - SMTP_PORT=<port>
+      - SMTP_SSL=<port>
+      - SMTP_USERNAME=<username>
+      - SMTP_PASSWORD=<password>
+      - DOMAIN=https://domain.tld

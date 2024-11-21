@@ -1,0 +1,16 @@
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CLI_ARGS=
+    volumes:
+      - /path/to/file/config:/config #duplicati data
+      - /path/to/file/important:/important #Locations for duplicati to make backups
+    ports:
+      - <port>:80
+    network_mode: host  # Use host network mode!!!
+    restart: unless-stopped

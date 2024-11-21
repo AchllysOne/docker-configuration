@@ -1,0 +1,15 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - <port>:80
+    environment:
+      TZ: $TZ
+      PORT: 80
+    volumes:
+      - /path/to/file/config:/config
+      - path/to/file/pics:/pics
+    restart: unless-stopped

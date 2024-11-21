@@ -1,0 +1,28 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/bookmarks
+
+- Social:
+    - example:
+        - icon: image path
+          href: https://domain.tld
+
+- Games:
+    - example1:
+        - icon: image path
+          href: https://domain.tld
+
+- WhoKnows:
+    - example2:
+        - icon: image path
+          href: https://domain.tld
+
+- Secret:
+    - example3:
+        - icon: image path
+          href: https://domain.tld
+
+- GitHub:
+    - example4:
+        - icon: image path
+          href: https://domain.tld

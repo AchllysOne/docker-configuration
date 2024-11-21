@@ -1,0 +1,13 @@
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- example:
+    - example1:
+        href: https://
+        icon: image thing
+        description: example hi
+
+    - example2:
+        href: https:/sub.domain.tld
+        icon: image thing
+        description: example hi

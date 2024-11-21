@@ -1,0 +1,18 @@
+services:
+  msmtpd:
+    image: crazymax/msmtpd
+    container_name: msmtpd
+    environment:
+      - "TZ=Europe/Paris"
+      - "PUID=1500"
+      - "PGID=1500"
+      - "SMTP_HOST=m"
+      - "SMTP_PORT=587"
+      - "SMTP_TLS=on"
+      - "SMTP_STARTTLS=on"
+      - "SMTP_TLS_CHECKCERT=on"
+      - "SMTP_AUTH=on"
+      - "SMTP_USER=<username>"  
+      - "SMTP_PASSWORD=<password>"  
+      - "SMTP_DOMAIN=<provider.tld>"
+    restart: always
